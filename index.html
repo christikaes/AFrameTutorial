@@ -7,15 +7,17 @@
     <body>
         <!-- This is our AFrame Scene, everything goes inside of this component -->
         <a-scene>
-            <!-- Box -->
-            <a-box position="0 2 -5"
-                   rotation="45 45 0"
-                   color="blue"></a-box>
+
+            <!-- R2D2 -->
+            <a-entity position="2 -1 -5"
+                      rotation="0 45 0"
+                      obj-model="obj: url(/static-assets/r2d2.obj); mtl: url(/static-assets/r2d2.mtl);">
+            </a-entity>
 
             <!-- Sky -->
             <a-sky src="url(/static-assets/sky.jpg)"
                    phi-start="90"></a-sky>
-        </a-scene>
+            </a-entity>
     </body>
 
 </html>
