@@ -12,12 +12,16 @@
             <a-entity position="2 -1 -5"
                       rotation="0 45 0"
                       obj-model="obj: url(/static-assets/r2d2.obj); mtl: url(/static-assets/r2d2.mtl);">
+                <a-animation attribute="rotation"
+                             to="0 405 0"
+                             dur="5000"
+                             easing="ease"
+                             repeat="indefinite"></a-animation>
             </a-entity>
 
             <!-- Sky -->
             <a-sky src="url(/static-assets/sky.jpg)"
                    phi-start="90"></a-sky>
-            </a-entity>
 
             <!-- Camera -->
             <a-entity camera
