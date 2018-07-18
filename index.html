@@ -2,55 +2,25 @@
 
     <head>
         <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+        <!-- include ar.js for A-Frame -->
+        <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
     </head>
 
     <body>
         <!-- This is our AFrame Scene, everything goes inside of this component -->
-        <a-scene>
+        <a-scene embedded
+                 arjs>
 
             <!-- R2D2 -->
-            <a-entity position="2 -1 -5"
-                      rotation="0 45 0"
-                      sound="src: url(/static-assets/r2d2.mp3); on: click"
+            <a-entity position="0 0 0"
+                      rotation="0 0 0"
+                      sclae="0.5 0.5 0.5"
+                      sound="src: url(/static-assets/r2d2.mp3); autoplay: true"
                       obj-model="obj: url(/static-assets/r2d2.obj); mtl: url(/static-assets/r2d2.mtl);">
-                <a-animation attribute="rotation"
-                             to="0 405 0"
-                             dur="5000"
-                             easing="ease"
-                             repeat="indefinite"></a-animation>
             </a-entity>
 
-            <!-- Sky -->
-            <a-sky src="url(/static-assets/sky.jpg)"
-                   phi-start="90"></a-sky>
-
-            <!-- Camera -->
-            <a-entity camera
-                      look-controls
-                      wasd-controls>
-
-                <!-- Cursor -->
-                <a-entity position="0 0 -3"
-                          geometry="primitive: ring; radiusOuter: 0.30;
-                                radiusInner: 0.20;"
-                          material="color: cyan; shader: flat"
-                          cursor="fuse: true">
-                    <a-animation begin="fusing"
-                                 easing="ease-in"
-                                 attribute="scale"
-                                 fill="forwards"
-                                 from="1 1 1"
-                                 to="0.1 0.1 0.1"
-                                 dur="1500"></a-animation>
-                    <a-animation begin="click"
-                                 easing="ease-in"
-                                 attribute="scale"
-                                 fill="backwards"
-                                 from="0.1 0.1 0.1"
-                                 to="1 1 1"
-                                 dur="150"></a-animation>
-                </a-entity>
-            </a-entity>
+            <!-- This is the ar camera -->
+            <a-marker-camera preset='hiro'></a-marker-camera>
     </body>
 
 </html>
